@@ -688,7 +688,8 @@ with tab2:
         input_df = pd.DataFrame([[pregnancies, glucose, blood_pressure,
                                    skin_thickness, insulin, bmi, dpf, age]],
                                  columns=feature_names)
-        input_scaled = scaler.transform(input_df)
+        # pass as numpy array — avoids feature name mismatch warning
+        input_scaled = scaler.transform(input_df.values)
         prediction   = model.predict(input_scaled)[0]
         probability  = model.predict_proba(input_scaled)[0]
 
@@ -704,12 +705,14 @@ with tab2:
         r1, r2 = st.columns(2)
         with r1:
             st.markdown(f"**🔴 Diabetes Risk: {prob_d:.1f}%**")
-            st.progress(int(prob_d))
+            st.progress(float(probability[1]))
             st.markdown(f"**🟢 No Diabetes: {prob_nd:.1f}%**")
-            st.progress(int(prob_nd))
+            st.progress(float(probability[0]))
         with r2:
             summary = pd.DataFrame({
-                "Parameter": feature_names,
+                "Parameter": ['Pregnancies','Glucose','BloodPressure',
+                               'SkinThickness','Insulin','BMI',
+                               'DiabetesPedigreeFunction','Age'],
                 "Value": [pregnancies, glucose, blood_pressure,
                           skin_thickness, insulin, bmi, dpf, age]
             })
