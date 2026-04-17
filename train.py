@@ -1,8 +1,8 @@
 """
-=============================================================
+
  AI Disease Prediction System - Model Training Script
  SDG 3 – Good Health and Well-being
-=============================================================
+
 """
 
 import pandas as pd
@@ -28,7 +28,7 @@ BASE_DIR  = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "dataset", "diabetes.csv")
 
 df = pd.read_csv(DATA_PATH)
-print(f"\n✅ Dataset loaded: {df.shape[0]} rows, {df.shape[1]} columns")
+print(f"\n Dataset loaded: {df.shape[0]} rows, {df.shape[1]} columns")
 
 # ── Replace zero values with median (they are missing data) ──
 zero_cols = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
