@@ -1,12 +1,4 @@
-"""
-=============================================================
- AI Disease Prediction System - Streamlit Web App
- SDG 3 – Good Health and Well-being
-=============================================================
- A clean, professional, and beginner-friendly UI for
- predicting diabetes using a trained ML model.
-=============================================================
-"""
+
 
 import streamlit as st
 import pandas as pd
