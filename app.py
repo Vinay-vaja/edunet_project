@@ -16,7 +16,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ── Custom CSS — Dark + Green Theme ───────────────────────
 st.markdown("""
 <style>
     /* ─── Google Font ─── */
