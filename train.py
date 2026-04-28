@@ -105,5 +105,5 @@ with open(SCALER_PATH, 'wb') as f:
 
 print(f"\n💾 model.pkl  saved")
 print(f"💾 scaler.pkl saved")
-print("\n✅ Training complete! Run: streamlit run app.py")
+print("\n Training Done Now! Run: streamlit run app.py")
 print("=" * 55)
